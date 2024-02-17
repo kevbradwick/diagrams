@@ -21,7 +21,7 @@ graph_attr = {
 with Diagram(
     "3 Tier Architecture", direction="TB", graph_attr=graph_attr, filename=FILENAME
 ):
-    caseworker = Person(name="Caseworker", description="A person that manages cases")
+    caseworker = Person(name="Caseworker", description="A person that manages cases", shape="person")
     user = Person(
         name="User", description="A person that uses the system", external=True
     )
@@ -43,12 +43,6 @@ with Diagram(
             technology="Django",
         )
 
-        (
-            user
-            >> frontend
-            >> Relationship("uses")
-            >> http_api
-            >> Relationship("uses")
-            >> database
-        )
-        caseworker >> Relationship("manages") >> frontend
+    
+    user >> frontend >> Relationship("uses") >> http_api >> Relationship("uses") >> database
+    caseworker >> Relationship("manages") >> frontend
