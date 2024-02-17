@@ -9,3 +9,8 @@ Make sure that Graphviz is installed on your system where you are building diagr
 For macOS:
 
     brew install graphviz
+
+## Examples
+
+- [Simple](./examples/simple/)
+- [C4](./examples/c4/)
